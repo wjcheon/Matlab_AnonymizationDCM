@@ -6,7 +6,7 @@ close all
 % RT Dose
 [fileNameRD, pathNameRD] = uigetfile('*.dcm')
 fileNameRD_new = [fileNameRD(1:end-4), '_anon.dcm']
-value.ReviewerName = ''; % RT dose has no fieldname of ReviewerName;
+value.ReviewerName = ''; % Remove value in the fieldname of ReviewName
 dicomanon(fullfile(pathNameRD, fileNameRD), fullfile(pathNameRD, fileNameRD_new), 'update', value)
 anonRD = dicominfo(fullfile(pathNameRD, fileNameRD_new))
 
